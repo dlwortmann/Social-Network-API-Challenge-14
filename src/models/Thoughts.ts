@@ -1,6 +1,6 @@
-import { Schema, Document, ObjectId, model } from 'mongoose'
+import { Schema, Document, model } from 'mongoose'
 import Reaction from "./Reaction.js"
-import formatDate from "../utils/Date.js"
+//import formatDate from "../utils/Date.js"
 
 interface IThought extends Document {
     text: string,
@@ -20,7 +20,7 @@ const thoughtSchema = new Schema<IThought>(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (date) => formatDate(date),
+            //get: (date) => formatDate(date),
         },
         username: {
             type: String,
