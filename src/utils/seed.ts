@@ -1,5 +1,6 @@
 import connection from "../config/connection.js"
 import { User } from '../models/index.js'
+import users from '../utils/data.js'
 
 connection.on('error', (err) => err)
 
