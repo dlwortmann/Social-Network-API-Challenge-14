@@ -26,13 +26,13 @@ const userSchema = new Schema<IUser>(
         thoughts: [
             { //populated subdoc
             type: Schema.Types.ObjectId,
-            ref: "Thoughts"
+            ref: "thoughts"
         }
     ],
         friends: [
             { //populated subdoc
             type: Schema.Types.ObjectId,
-            ref: "User"
+            ref: "user"
         }
     ]
     },
@@ -50,6 +50,6 @@ userSchema.virtual('friendCount').get(function () {
 });
 
 // Initialize User Model
-const User = model('User', userSchema);
+const User = model('user', userSchema);
 
 export default User;
