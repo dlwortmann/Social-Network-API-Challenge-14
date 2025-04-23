@@ -42,3 +42,35 @@ export const createThought = async (req: Request, res: Response) => {
         res.status(500).json(err)
     }
 }
+
+export const updateThought = async (req: Request, res: Response) => {
+    try {
+        const thought = await Thoughts.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            { $set: req.body },
+            { runValidators: true, new: true }
+        )
+        if (!thought) {
+            return res.status(404).json({ message: 'No matching thought with that ID' })
+        } else {
+            return res.status(200).json(thought)
+        }
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+}
+
+export const deleteThought = async (req: Request, res: Response) => {
+    try {
+        const thought = await Thoughts.findOneAndDelete(
+            { _id: req.params.thoughtId }
+        )
+        if (!thought) {
+            return res.status(404).json({ message: 'No matching thought with that ID' })
+        } else {
+            return res.status(200).json({ message: 'Thought deleted successfully' })
+        }
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+}

@@ -1,7 +1,7 @@
-import { Schema, ObjectId, Document, Types, model } from 'mongoose';
+import { Schema, ObjectId, Document, Types } from 'mongoose';
 //import formatDate from "../utils/Date.js"
 
-interface IReaction extends Document {
+export interface IReaction extends Document {
     reactionId: ObjectId,
     reactionBody: String,
     createdAt: Date,
@@ -33,11 +33,9 @@ const reactionSchema = new Schema<IReaction>(
     {
         toJSON: {
             getters: true
-        },
-        id: false
+        }
     }
 );
 
-const Reaction = model('Reaction', reactionSchema)
 
-export default Reaction;
+export default reactionSchema;
