@@ -1,11 +1,12 @@
-import { Schema, Document, model, ObjectId } from 'mongoose';
+import { Schema, Document, model, Types } from 'mongoose';
 
 //create user interface
 interface IUser extends Document {
+    _id: Types.ObjectId,
     username: string,
     email: string,
-    thoughts: ObjectId[],
-    friends: ObjectId[],
+    thoughts: Types.ObjectId[],
+    friends: Types.ObjectId[],
 }
 
 // build schema to create User Model
@@ -26,7 +27,7 @@ const userSchema = new Schema<IUser>(
         thoughts: [
             { //populated subdoc
             type: Schema.Types.ObjectId,
-            ref: "thoughts"
+            ref: "thought"
         }
     ],
         friends: [

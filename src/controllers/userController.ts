@@ -1,4 +1,4 @@
-import Thoughts from '../models/Thoughts.js';
+import Thought from '../models/Thoughts.js';
 import User from '../models/User.js'
 import { Request, Response } from 'express'
 
@@ -31,7 +31,7 @@ export const getSingleUser = async (req: Request, res: Response) => {
         if (!user) {
             return res.status(404).json({ message: 'No user match with that ID' })
         } else {
-            return res.status(500).json(user)
+            return res.status(200).json(user)
         }
     } catch (err) {
         return res.status(500).json(err)
@@ -51,7 +51,7 @@ export const updateUser = async (req: Request, res: Response) => {
             return res.status(200).json(user)
         }
     } catch (err) {
-        return res.status(50).json(err)
+        return res.status(500).json(err)
     }
 }
 
@@ -61,7 +61,7 @@ export const deleteUser = async (req: Request, res: Response) => {
         if (!user) {
             return res.status(404).json({ message: 'No matching user with that ID' })
         } else {
-            await Thoughts.deleteMany({ _id: { $in: user.thoughts } })
+            await Thought.deleteMany({ _id: { $in: user.thoughts } })
             return res.status(200).json({ message: 'User and thoughts deleted.' })
         }
     } catch (err) {

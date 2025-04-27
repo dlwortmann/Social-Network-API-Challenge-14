@@ -3,9 +3,9 @@ import { Schema, ObjectId, Document, Types } from 'mongoose';
 
 export interface IReaction extends Document {
     reactionId: ObjectId,
-    reactionBody: String,
+    reactionBody: string,
     createdAt: Date,
-    username: String,
+    username: string,
 }
 
 const reactionSchema = new Schema<IReaction>(
@@ -29,11 +29,12 @@ const reactionSchema = new Schema<IReaction>(
             required: true,
         }
     },
-    // {
-    //     toJSON: {
-    //         getters: true
-    //     }
-    // }
+    {
+        toJSON: {
+            getters: true
+        },
+        id: false
+    }
 );
 
 

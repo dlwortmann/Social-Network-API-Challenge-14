@@ -6,7 +6,7 @@ const router = Router()
 router.use('/api', apiRoutes);
 
 router.use((_req, res) => {
-      return res.send("Not a valid route")
+      return res.status(404).json({ message: "Not a valid route" })
     })
 
 export default router;
