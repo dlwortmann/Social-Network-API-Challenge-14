@@ -17,7 +17,7 @@ This project built an API to be used for a simple social network application usi
 
 ## Live URL
 
-[Link to Walkthrough Video](https://app.screencastify.com/v3/watch/F3x0LzQw8uPD8Rz64i9E)
+[Link to Walkthrough Video](https://drive.google.com/file/d/1kWOO-p_Q8hXy_nQZM0447YwSI1pyR2CD/view?usp=drive_link)
 
 ![screenshot of insomnia](./Assets/image.png)
 
