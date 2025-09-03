@@ -13,7 +13,7 @@
  * [Questions](#questions)
 
 ## Description
-This project built an API to be used for a simple social network application using Express.js, a MonoDB Database, and the Mongoose ODM. This was my first project using a NoSQL database and creating an entire API from the scratch. This project only created the back-end of the application; a future development goal is to complete it by adding a client side and get it deployed.
+This project built an API to be used for a simple social network application using Express.js, a MongoDB Database, and the Mongoose ODM. This was my first project using a NoSQL database and creating an entire API from scratch. This project only created the back-end of the application; a future development goal is to complete it by adding a client side and get it deployed.
 
 ## Live URL
 
